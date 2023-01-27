@@ -1,0 +1,13 @@
+def vote(request, question_id):
+    question = get_object_or_404(Question, pk=question_id)
+    try:
+        selected_choice = question.choice_set.get(pk=request.POST['choixUtilisateur'])
+    except (KeyError, Choice.DoesNotExist):
+        # Redisplay the question voting form.
+        return render(request, 'polls/detail2.html', {'question': question,
+            'error_message': "Attention! vous n'avez pas coché un choix",
+        })
+    else:
+        selected_choice.votes += 1
+        selected_choice.save()
+        return vote(request, question_id)

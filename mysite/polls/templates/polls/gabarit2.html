@@ -1,0 +1,10 @@
+<h3> <p style="color:#FF0000";>bonjour </p></h3>
+<ul>  {% for e in ifosGLM2%}
+         <li> {{ e }} </li>
+          {% endfor %}  </ul>
+{% if ifosGLM2%}
+    <h3>Le nombre d'éléments dans la liste ifosGLM2:
+        {{ ifosGLM2|length }} </h3>
+{% else %}
+    La liste ifosGLM2 donnée par la vue est vide
+{% endif %}

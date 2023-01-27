@@ -1,0 +1,8 @@
+{% if questions%} 
+	<ul> 
+	{% for question in questions %} 
+	<li>{{question.question_text }}</li> 
+	{% endfor %} 
+	</ul> 
+{% else %} <p>pas de sondages disponibles</p>
+{% endif %} 

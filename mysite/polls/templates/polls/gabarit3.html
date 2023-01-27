@@ -1,0 +1,7 @@
+<h3> <p style="color:#FF0000";> tp3 </p></h3>
+<ol>
+{% for e in DictionnaireDesVentes.items %}
+   <li> Le vendeur: {{ e.0 }} a vendu {{ e.1 }} produits</li> 
+   <!--tester e[0]-->
+{% endfor %}
+</ol>

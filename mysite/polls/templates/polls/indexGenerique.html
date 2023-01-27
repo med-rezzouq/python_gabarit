@@ -1,0 +1,10 @@
+{% if LesTroisDernieresQuestions%} 
+	<ul> 
+	{% for question in LesTroisDernieresQuestions%} 
+	<li>{{ question.id }} ==>
+                 {{question.question_text }}==>                  {{question.pub_date}}</li> 
+	{% endfor %} 
+	</ul> 
+{% else %} 
+<p>Pas de sondages disponibles pour le moment !</p>
+{% endif %} 
